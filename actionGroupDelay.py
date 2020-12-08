@@ -4,7 +4,7 @@
 Indigo Action Group Delay
 
 Usage:
-import indigoActionGroupDelay as agd
+import actionGroupDelay as agd
 agd.runDelayedActionGroup(action_id=12345678, seconds=60)
 """
 import indigo
