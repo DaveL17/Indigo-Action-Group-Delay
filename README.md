@@ -3,12 +3,13 @@
 
 ## Installation
 Save file(s) to a folder located within the Python search path. For example,  
+
 `/Library/Python/2.7/site-packages/`
 
 ## Usage
-import actionGroupDelay as agd
+import actionGroupDelay as agd  
 agd.runDelayedActionGroup(action_id=`12345678`, seconds=`60`)
 
 ## Parameters
-`action_id` Indigo ID for the Action Group
+`action_id` Indigo ID for the Action Group  
 `seconds` Second to delay before running Action Group
