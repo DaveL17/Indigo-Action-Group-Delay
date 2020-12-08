@@ -2,7 +2,7 @@
 # ![shield](https://img.shields.io/github/release/DaveL17/Indigo-Action-Group-Delay.svg) ![indigo-version](https://img.shields.io/badge/Indigo-7.0+-blueviolet.svg) ![indigo-version](https://img.shields.io/badge/Python-2.7-darkgreen.svg)
 
 ## Installation
-Save file(s) to a folder located within the Python search path. For example,  
+Save file `actionGroupDelay.py` to a folder located within the Python search path. For example,  
 
 `/Library/Python/2.7/site-packages/`
 
