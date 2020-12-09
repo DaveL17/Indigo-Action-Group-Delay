@@ -25,6 +25,10 @@ you choose to save the file.
 ```python
 import actionGroupDelay as agd  
 
+agd.runDelayedActionGroup(12345678)  # Action will execute in 60 seconds  
+
+# or 
+
 agd.runDelayedActionGroup(12345678, 60)  
 
 # or 
@@ -48,7 +52,7 @@ t.start()
 
 ## Output
 If successful, the script will return `True` and provide a message 
-`Action Group XXXXXXXX executed.`.  
+`Action Group XXXXXXXX executed`.  
 
 If unsuccessful, it will return 
 `False` and a brief error message where appropriate.

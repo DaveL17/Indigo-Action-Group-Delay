@@ -2,13 +2,8 @@
 # -*- coding: utf-8 -*-
 """
 Indigo Action Group Delay
-
-Usage:
-import actionGroupDelay as agd
-agd.runDelayedActionGroup(action_id=12345678, seconds=60)
 """
 import indigo
-import sys
 import time
 
 __author__  = u"DaveL17"
@@ -21,7 +16,11 @@ def __init__(self):
 
 
 def runDelayedActionGroup(action_id=None, seconds=60):
-
+    """
+    :param int action_id: Indigo action ID
+    :param int seconds:  Time delay in seconds (default of 60)
+    :return:
+    """
     try:
         seconds = int(seconds)
 
