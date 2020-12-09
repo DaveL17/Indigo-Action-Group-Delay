@@ -21,15 +21,23 @@ you choose to save the file.
 `seconds` Seconds to delay before executing the Action Group (optional, will default to 60; integer)
 
 
-### Usage
+### Examples
 ```python
 from actionGroupDelay import runDelayedActionGroup
 
 runDelayedActionGroup(action_id=1450401770, seconds=5)
-
-# or
+```
+or
+```python
+from actionGroupDelay import runDelayedActionGroup
 
 runDelayedActionGroup(1450401770, 5)
+```
+or
+```python
+import actionGroupDelay
+
+actionGroupDelay.runDelayedActionGroup(1450401770, 5)
 ```
 
 ### Output
