@@ -18,7 +18,7 @@ you choose to save the file.
 
 ## Usage
 ### Parameters
-`action_id` Indigo ID for the Action Group  (required)
+`action_id` Indigo ID for the Action Group  (required)  
 `seconds` Seconds to delay before executing Action Group (optional, will default to 60)
 
 ### Run directly (blocking)
