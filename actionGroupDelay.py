@@ -9,7 +9,7 @@ import time
 
 __author__  = u"DaveL17"
 __title__   = u"Indigo Action Group Delay"
-__version__ = u"1.0"
+__version__ = u"1.1"
 
 
 def __init__(self):
