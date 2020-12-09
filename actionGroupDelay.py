@@ -4,6 +4,7 @@
 Indigo Action Group Delay
 """
 import indigo
+import threading
 import time
 
 __author__  = u"DaveL17"
@@ -21,20 +22,26 @@ def runDelayedActionGroup(action_id=None, seconds=60):
     :param int seconds:  Time delay in seconds (default of 60)
     :return:
     """
+
+    def run_delayed_action(a_id, s):
+        time.sleep(s)
+        indigo.actionGroup.execute(a_id)
+        indigo.server.log(u"Action Group {0} executed.".format(a_id))
+
     try:
-        seconds = int(seconds)
-
-        if action_id:
-            time.sleep(seconds)
-            indigo.actionGroup.execute(action_id)
-
-        else:
+        if action_id not in indigo.actionGroups.keys():
             raise IndexError
 
-        return True, u"Action Group {0} executed.".format(action_id)
+        if not isinstance(seconds, int):
+            raise ValueError
+
+        t = threading.Thread(target=run_delayed_action, kwargs={'a_id': action_id, 's': seconds})
+        t.start()
 
     except IndexError:
-        return False, u"Please provide a valid action group ID"
+        indigo.server.log(u"Please provide a valid action group ID.")
+        return False
 
     except ValueError:
-        return False, u"Please provide a valid delay value in seconds (integer)."
+        indigo.server.log(u"Please provide a valid delay value in seconds (integer).")
+        return False
