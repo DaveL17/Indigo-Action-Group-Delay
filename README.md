@@ -51,4 +51,4 @@ actionGroupDelay.runDelayedActionGroup(12345678)  # will execute in 60 seconds
 When run, the shim will create a separate process (thread) and 
 execute the action group after the specified delay. When the
 action group is executed, the script will write 
-`Delayed action group 1450401770 executed.` to the Indigo events log.
+`Delayed action group 12345678 executed.` to the Indigo events log.
