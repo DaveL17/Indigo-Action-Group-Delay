@@ -17,8 +17,8 @@ You may need to enter your administrator privileges depending on where
 you choose to save the file.
 
 ### Parameters
-`action_id` Indigo ID for the Action Group to be executed (required)  
-`seconds` Seconds to delay before executing the Action Group (optional, will default to 60)
+`action_id` Indigo ID for the Action Group to be executed (required; integer)  
+`seconds` Seconds to delay before executing the Action Group (optional, will default to 60; integer)
 
 
 ### Usage
