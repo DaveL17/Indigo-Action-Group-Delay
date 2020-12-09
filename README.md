@@ -25,19 +25,26 @@ you choose to save the file.
 ```python
 from actionGroupDelay import runDelayedActionGroup
 
-runDelayedActionGroup(action_id=1450401770, seconds=5)
+runDelayedActionGroup(action_id=12345678, seconds=5)
 ```
 or
 ```python
 from actionGroupDelay import runDelayedActionGroup
 
-runDelayedActionGroup(1450401770, 5)
+runDelayedActionGroup(12345678, 5)
 ```
 or
 ```python
 import actionGroupDelay
 
-actionGroupDelay.runDelayedActionGroup(1450401770, 5)
+actionGroupDelay.runDelayedActionGroup(12345678, 5)
+```
+
+or
+```python
+import actionGroupDelay
+
+actionGroupDelay.runDelayedActionGroup(12345678)  # will execute in 60 seconds
 ```
 
 ### Output

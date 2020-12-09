@@ -29,6 +29,10 @@ def runDelayedActionGroup(action_id=None, seconds=60):
         indigo.server.log(u"Delayed action group {0} executed.".format(a_id))
 
     try:
+
+        if not action_id:
+            raise IndexError
+
         if action_id not in indigo.actionGroups.keys():
             raise IndexError
 
