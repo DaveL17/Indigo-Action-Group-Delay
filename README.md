@@ -23,8 +23,9 @@ import threading
 import actionGroupDelay as agd  
 
 
-t = threading.Thread(target=agd.runDelayedActionGroup, args=[1450401770, 5])  # Replace with your action id, time in seconds    
-t.start()```
+t = threading.Thread(target=agd.runDelayedActionGroup, kwargs={'action_id': 1450401770, 'seconds': 5})  # Replace with your action id, time in seconds
+t.start()
+```
 
 ## Parameters
 `action_id` Indigo ID for the Action Group  
