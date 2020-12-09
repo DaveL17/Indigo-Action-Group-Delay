@@ -25,6 +25,10 @@ you choose to save the file.
 ```python
 from actionGroupDelay import runDelayedActionGroup
 
+runDelayedActionGroup(action_id=1450401770, seconds=5)
+
+# or
+
 runDelayedActionGroup(1450401770, 5)
 ```
 
