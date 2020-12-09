@@ -5,7 +5,8 @@ As of version 7.4, Indigo doesn't have a built-in method for setting
 a delay when executing an action group when calling the Python command 
 `indigo.actionGroup.execute(12345678)`. The purpose of this short 
 script is to provide a shim that can serve as a proxy for delayed 
-execution.
+execution. The shim runs independently--using it will not stop the 
+rest of your script from continuing.
 
 ### Installation
 Save file `actionGroupDelay.py` to a folder located within the Python 
@@ -49,6 +50,6 @@ actionGroupDelay.runDelayedActionGroup(12345678)  # will execute in 60 seconds
 
 ### Output
 When run, the shim will create a separate process (thread) and 
-execute the action group after the specified delay. When the
+execute the chosen action group after the specified delay. When the
 action group is executed, the script will write 
 `Delayed action group 12345678 executed.` to the Indigo events log.
