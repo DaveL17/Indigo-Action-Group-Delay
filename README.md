@@ -24,7 +24,13 @@ you choose to save the file.
 ### Run directly (blocking)
 ```python
 import actionGroupDelay as agd  
+
+agd.runDelayedActionGroup(12345678, 60)  
+
+# or 
+
 agd.runDelayedActionGroup(action_id=12345678, seconds=60)  
+
 ```
 Note that if you use this structure in an embedded Python script, the 
 command and delay must complete within 10 seconds.  It's recommended 
@@ -35,7 +41,6 @@ time limit.)
 ```python
 import threading  
 import actionGroupDelay as agd  
-
 
 t = threading.Thread(target=agd.runDelayedActionGroup, kwargs={'action_id': 1450401770, 'seconds': 5})  # Replace with your action id, time in seconds
 t.start()
