@@ -17,8 +17,8 @@ You may need to enter your administrator privileges depending on where
 you choose to save the file.
 
 ### Parameters
-`action_id` Indigo ID for the Action Group  (required)  
-`seconds` Seconds to delay before executing Action Group (optional, will default to 60)
+`action_id` Indigo ID for the Action Group to be executed (required)  
+`seconds` Seconds to delay before executing the Action Group (optional, will default to 60)
 
 
 ### Usage
@@ -32,4 +32,4 @@ runDelayedActionGroup(1450401770, 5)
 When run, the shim will create a separate process (thread) and 
 execute the action group after the specified delay. When the
 action group is executed, the script will write 
-`Delayed Action Group XXXXXXXX executed` to the Indigo events log.
+`Delayed action group 1450401770 executed.` to the Indigo events log.

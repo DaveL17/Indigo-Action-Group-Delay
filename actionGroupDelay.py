@@ -26,7 +26,7 @@ def runDelayedActionGroup(action_id=None, seconds=60):
     def run_delayed_action(a_id, s):
         time.sleep(s)
         indigo.actionGroup.execute(a_id)
-        indigo.server.log(u"Action Group {0} executed.".format(a_id))
+        indigo.server.log(u"Delayed action group {0} executed.".format(a_id))
 
     try:
         if action_id not in indigo.actionGroups.keys():
@@ -39,9 +39,12 @@ def runDelayedActionGroup(action_id=None, seconds=60):
         t.start()
 
     except IndexError:
-        indigo.server.log(u"Please provide a valid action group ID.")
-        return False
+        raise actionGroupDelayError(u"Please provide a valid action group ID.")
 
     except ValueError:
-        indigo.server.log(u"Please provide a valid delay value in seconds (integer).")
-        return False
+        raise actionGroupDelayError(u"Please provide a valid delay value in seconds (integer).")
+
+
+class actionGroupDelayError(Exception):
+    pass
+
