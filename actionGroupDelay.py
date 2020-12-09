@@ -8,6 +8,7 @@ import actionGroupDelay as agd
 agd.runDelayedActionGroup(action_id=12345678, seconds=60)
 """
 import indigo
+import sys
 import time
 
 __author__  = u"DaveL17"
@@ -25,20 +26,16 @@ def runDelayedActionGroup(action_id=None, seconds=60):
         seconds = int(seconds)
 
         if action_id:
-            indigo.server.log(u"Running Action Group {id} with delay of {sec} seconds.".format(id=action_id, sec=seconds))
             time.sleep(seconds)
             indigo.actionGroup.execute(action_id)
-            indigo.server.log(u"Action Group {0} executed.".format(action_id))
 
         else:
             raise IndexError
 
-        return True
+        return True, u"Action Group {0} executed.".format(action_id)
 
     except IndexError:
-        indigo.server.log(u"Invalid Action Group ID provided.", isError=True)
-        return False
+        return False, u"Please provide a valid action group ID"
 
     except ValueError:
-        indigo.server.log(u"Invalid time delay provided.", isError=True)
-        return False
+        return False, u"Please provide a valid delay value in seconds (integer)."
