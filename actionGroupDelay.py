@@ -5,11 +5,10 @@ Indigo Action Group Delay
 """
 import indigo
 import threading
-import time
 
 __author__  = u"DaveL17"
 __title__   = u"Indigo Action Group Delay"
-__version__ = u"1.1"
+__version__ = u"1.2"
 
 
 def __init__(self):
@@ -24,7 +23,7 @@ def runDelayedActionGroup(action_id=None, seconds=60):
     """
 
     def run_delayed_action(a_id, s):
-        time.sleep(s)
+        indigo.activePlugin.sleep(s)
         indigo.actionGroup.execute(a_id)
         indigo.server.log(u"Delayed action group {0} executed.".format(a_id))
 
