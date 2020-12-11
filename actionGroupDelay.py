@@ -8,7 +8,7 @@ import threading
 
 __author__  = u"DaveL17"
 __title__   = u"Indigo Action Group Delay"
-__version__ = u"1.2"
+__version__ = u"1.3"
 
 
 def __init__(self):
@@ -29,25 +29,35 @@ def runDelayedActionGroup(action_id=None, seconds=60):
 
     try:
 
+        # action_id is None
         if not action_id:
             raise IndexError
 
+        # action_id not recognized by Indigo
         if action_id not in indigo.actionGroups.keys():
             raise IndexError
 
+        # seconds not integer
         if not isinstance(seconds, int):
             raise ValueError
 
-        t = threading.Thread(target=run_delayed_action, kwargs={'a_id': action_id, 's': seconds})
+        # number of running threads
+        active_threads = len(threading.enumerate())
+        thread_num = active_threads + 1
+
+        t = threading.Thread(group=None,
+                             target=run_delayed_action,
+                             name="action_group_delay_{num}".format(num=thread_num),
+                             kwargs={'a_id': action_id, 's': seconds}
+                             )
         t.start()
 
     except IndexError:
-        raise actionGroupDelayError(u"Please provide a valid action group ID.")
+        raise ActionGroupDelayError(u"Please provide a valid action group ID.")
 
     except ValueError:
-        raise actionGroupDelayError(u"Please provide a valid delay value in seconds (integer).")
+        raise ActionGroupDelayError(u"Please provide a valid delay value in seconds (integer).")
 
 
-class actionGroupDelayError(Exception):
+class ActionGroupDelayError(Exception):
     pass
-
