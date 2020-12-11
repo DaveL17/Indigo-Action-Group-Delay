@@ -41,13 +41,10 @@ def runDelayedActionGroup(action_id=None, seconds=60):
         if not isinstance(seconds, int):
             raise ValueError
 
-        # number of running threads
-        active_threads = len(threading.enumerate())
-        thread_num = active_threads + 1
-
         t = threading.Thread(group=None,
                              target=run_delayed_action,
-                             name="action_group_delay_{num}".format(num=thread_num),
+                             name=None,
+                             args={},
                              kwargs={'a_id': action_id, 's': seconds}
                              )
         t.start()
