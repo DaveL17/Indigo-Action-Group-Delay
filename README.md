@@ -1,7 +1,7 @@
 # Indigo-Action-Group-Delay
 # ![shield](https://img.shields.io/github/release/DaveL17/Indigo-Action-Group-Delay.svg) ![indigo-version](https://img.shields.io/badge/Indigo-7.0+-blueviolet.svg) ![indigo-version](https://img.shields.io/badge/Python-2.7-darkgreen.svg)
 
-As of version 7.4, Indigo doesn't have a built-in method for setting 
+As of version 2022.1, Indigo doesn't have a built-in method for setting 
 a delay when executing an action group when calling the Python command 
 `indigo.actionGroup.execute(12345678)`. The purpose of this short 
 script is to provide a shim that can serve as a proxy for delayed 
@@ -12,7 +12,7 @@ rest of your script from continuing.
 Save file `actionGroupDelay.py` to a folder located within the Python 
 search path. For example,  
 
-`/Library/Python/2.7/site-packages/`
+`/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/actionGroupDelay.py`
 
 You may need to enter your administrator privileges depending on where
 you choose to save the file.
@@ -23,29 +23,33 @@ you choose to save the file.
 
 
 ### Examples
-```python
-from actionGroupDelay import runDelayedActionGroup
 
-runDelayedActionGroup(action_id=12345678, seconds=5)
+```python
+from actionGroupDelay import run_delayed_action_group
+
+run_delayed_action_group(action_id=12345678, seconds=5)
 ```
 or
-```python
-from actionGroupDelay import runDelayedActionGroup
 
-runDelayedActionGroup(12345678, 5)
+```python
+from actionGroupDelay import run_delayed_action_group
+
+run_delayed_action_group(12345678, 5)
 ```
 or
+
 ```python
 import actionGroupDelay
 
-actionGroupDelay.runDelayedActionGroup(12345678, 5)
+actionGroupDelay.run_delayed_action_group(12345678, 5)
 ```
 
 or
+
 ```python
 import actionGroupDelay
 
-actionGroupDelay.runDelayedActionGroup(12345678)  # will execute in 60 seconds
+actionGroupDelay.run_delayed_action_group(12345678)  # will execute in 60 seconds
 ```
 
 ### Output
