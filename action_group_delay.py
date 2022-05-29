@@ -11,7 +11,7 @@ except ImportError:
 
 __author__  = "DaveL17"
 __title__   = "Indigo Action Group Delay"
-__version__ = "1.4"
+__version__ = "1.5"
 
 
 def __init__():
@@ -31,12 +31,8 @@ def run_delayed_action_group(action_id=None, seconds=60):
 
     try:
 
-        # action_id is None
-        if not action_id:
-            raise IndexError
-
         # action_id not recognized by Indigo
-        if action_id not in indigo.actionGroups.keys():
+        if not action_id or action_id not in indigo.actionGroups.keys():
             raise IndexError
 
         # seconds not float or integer
