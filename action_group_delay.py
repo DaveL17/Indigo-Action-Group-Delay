@@ -14,7 +14,7 @@ __title__   = "Indigo Action Group Delay"
 __version__ = "1.4"
 
 
-def __init__(self):
+def __init__():
     pass
 
 
@@ -44,23 +44,27 @@ def run_delayed_action_group(action_id=None, seconds=60):
         if not isinstance(seconds, int):
             raise ValueError
 
-        t = threading.Thread(
+        delayed_action_thread = threading.Thread(
             group=None,
             target=run_delayed_action,
             name=None,
             args={},
-            kwargs={'a_id': action_id, 's': seconds}
+            kwargs={'a_id': action_id, 'secs': seconds}
         )
-        t.daemon = True
+        delayed_action_thread.daemon = True
         indigo.activePlugin.sleep(.25)  # Take a short heartbeat to ensure the command got sent
-        t.start()
+        delayed_action_thread.start()
 
     except IndexError:
-        raise ActionGroupDelayError("Please provide a valid action group ID.")
+        msg = "Invalid action ID."
+        raise ActionGroupDelayError(msg) from IndexError
 
     except ValueError:
-        raise ActionGroupDelayError("Please provide a valid delay value in seconds (integer).")
+        msg = "Delay time not an integer."
+        raise ActionGroupDelayError(msg) from ValueError
 
 
 class ActionGroupDelayError(Exception):
-    pass
+    """
+    ActionGroupDelayError Custom Exception Class
+    """
