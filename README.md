@@ -9,10 +9,10 @@ execution. The shim runs independently--using it will not stop the
 rest of your script from continuing.
 
 ### Installation
-Save file `actionGroupDelay.py` to a folder located within the Python 
+Save file `action_group_delay.py` to a folder located within the Python 
 search path. For example:  
 
-`/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/actionGroupDelay.py`
+`/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/action_group_delay.py`
 
 You may need to enter your administrator privileges depending on where
 you choose to save the file.
@@ -25,31 +25,31 @@ you choose to save the file.
 ### Examples
 
 ```python
-from actionGroupDelay import run_delayed_action_group
+from action_group_delay import run_delayed_action_group
 
 run_delayed_action_group(action_id=12345678, seconds=5)
 ```
 or
 
 ```python
-from actionGroupDelay import run_delayed_action_group
+from action_group_delay import run_delayed_action_group
 
 run_delayed_action_group(12345678, 5)
 ```
 or
 
 ```python
-import actionGroupDelay
+import action_group_delay
 
-actionGroupDelay.run_delayed_action_group(12345678, 5)
+action_group_delay.run_delayed_action_group(12345678, 5)
 ```
 
 or
 
 ```python
-import actionGroupDelay
+import action_group_delay
 
-actionGroupDelay.run_delayed_action_group(12345678)  # will execute in 60 seconds
+action_group_delay.run_delayed_action_group(12345678)  # will execute in 60 seconds
 ```
 
 ### Output
