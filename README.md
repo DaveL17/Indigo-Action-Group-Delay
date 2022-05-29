@@ -1,7 +1,7 @@
 # Indigo-Action-Group-Delay
 # ![shield](https://img.shields.io/github/release/DaveL17/Indigo-Action-Group-Delay.svg) ![indigo-version](https://img.shields.io/badge/Indigo-2022.1+-blueviolet.svg) ![indigo-version](https://img.shields.io/badge/Python-3.10-darkgreen.svg)
 
-As of version 2022.1, Indigo doesn't have a built-in method for setting 
+Up to version 2022.1, Indigo doesn't have a built-in method for setting 
 a delay when executing an action group when calling the Python command 
 `indigo.actionGroup.execute(12345678)`. The purpose of this short 
 script is to provide a shim that can serve as a proxy for delayed 
