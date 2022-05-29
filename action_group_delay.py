@@ -25,8 +25,7 @@ def run_delayed_action_group(action_id=None, seconds=60):
     :return:
     """
 
-    def run_delayed_action(a_id, secs):
-        indigo.activePlugin.sleep(secs)
+    def run_delayed_action(a_id):
         indigo.actionGroup.execute(a_id)
         indigo.server.log(f"Delayed action group {a_id} executed.")
 
@@ -40,20 +39,12 @@ def run_delayed_action_group(action_id=None, seconds=60):
         if action_id not in indigo.actionGroups.keys():
             raise IndexError
 
-        # seconds not integer
-        if not isinstance(seconds, int):
+        # seconds not float or integer
+        if not isinstance(seconds, (float, int)):
             raise ValueError
 
-        delayed_action_thread = threading.Thread(
-            group=None,
-            target=run_delayed_action,
-            name=None,
-            args={},
-            kwargs={'a_id': action_id, 'secs': seconds}
-        )
-        delayed_action_thread.daemon = True
+        threading.Timer(seconds, run_delayed_action, args=[action_id]).start()
         indigo.activePlugin.sleep(.25)  # Take a short heartbeat to ensure the command got sent
-        delayed_action_thread.start()
 
     except IndexError:
         msg = "Invalid action ID."
