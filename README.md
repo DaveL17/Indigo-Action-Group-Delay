@@ -1,5 +1,5 @@
 # Indigo-Action-Group-Delay
-# ![shield](https://img.shields.io/github/release/DaveL17/Indigo-Action-Group-Delay.svg) ![indigo-version](https://img.shields.io/badge/Indigo-7.0+-blueviolet.svg) ![indigo-version](https://img.shields.io/badge/Python-2.7-darkgreen.svg)
+# ![shield](https://img.shields.io/github/release/DaveL17/Indigo-Action-Group-Delay.svg) ![indigo-version](https://img.shields.io/badge/Indigo-2022.1+-blueviolet.svg) ![indigo-version](https://img.shields.io/badge/Python-3.10-darkgreen.svg)
 
 As of version 2022.1, Indigo doesn't have a built-in method for setting 
 a delay when executing an action group when calling the Python command 
@@ -10,7 +10,7 @@ rest of your script from continuing.
 
 ### Installation
 Save file `actionGroupDelay.py` to a folder located within the Python 
-search path. For example,  
+search path. For example:  
 
 `/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/actionGroupDelay.py`
 
