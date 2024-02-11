@@ -52,9 +52,8 @@ When run, the shim will create a separate process (thread) and execute the chose
 delay. When the action group is executed, the script will write `Delayed action group 12345678 executed.` to the 
 Indigo events log.
 
-### Note
-If used in an embedded script, the action group delay time can exceed Indigo's 10-second limitation -- the delayed 
+> [!NOTE]
+> If used in an embedded script, the action group delay time can exceed Indigo's 10-second limitation -- the delayed 
 action will still fire.  ***HOWEVER***, if the embedded script times out for another reason, the Indigo Host will 
-kill the embedded script (and the delayed action along with it). Therefore, if you need to use the `Action Group 
-Delay` shim with a script that could take longer than 10-seconds to execute, it's  recommended to use a linked script 
+kill the embedded script (and the delayed action along with it). Therefore, if you need to use the `Action Group Delay` shim with a script that could take longer than 10-seconds to execute, it's  recommended to use a linked script 
 instead (which isn't subject to the 10-second limitation).

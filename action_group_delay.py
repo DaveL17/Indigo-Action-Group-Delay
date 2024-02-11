@@ -18,14 +18,14 @@ def __init__():
     pass
 
 
-def run_delayed_action_group(action_id=None, seconds=60):
+def run_delayed_action_group(action_id: int = None, seconds: int = 60):
     """
     :param int action_id: Indigo action ID
     :param int seconds:  Time delay in seconds (default of 60)
     :return:
     """
 
-    def run_delayed_action(a_id):
+    def run_delayed_action(a_id: int = None):
         indigo.actionGroup.execute(a_id)
         indigo.server.log(f"Delayed action group {a_id} executed.")
 
